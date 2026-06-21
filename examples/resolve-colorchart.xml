@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colorchart name="Example ColorChecker" type="7">
+  <grid index="0" name="Dark Skin"><color xyz="0.111621, 0.101098, 0.069925"/></grid>
+  <grid index="1" name="Light Skin"><color xyz="0.424553, 0.402522, 0.307273"/></grid>
+  <grid index="2" name="Blue Sky"><color xyz="0.220260, 0.230703, 0.459315"/></grid>
+  <grid index="3" name="Foliage"><color xyz="0.104307, 0.133979, 0.064505"/></grid>
+  <grid index="4" name="Blue Flower"><color xyz="0.296653, 0.274485, 0.547636"/></grid>
+  <grid index="5" name="Bluish Green"><color xyz="0.486398, 0.649428, 0.696344"/></grid>
+  <grid index="6" name="Orange"><color xyz="0.458535, 0.332240, 0.055881"/></grid>
+  <grid index="7" name="Purplish Blue"><color xyz="0.154901, 0.125640, 0.458557"/></grid>
+  <grid index="8" name="Moderate Red"><color xyz="0.375695, 0.244967, 0.221479"/></grid>
+  <grid index="9" name="Purple"><color xyz="0.096663, 0.072093, 0.196173"/></grid>
+  <grid index="10" name="Yellow Green"><color xyz="0.479783, 0.673517, 0.203679"/></grid>
+  <grid index="11" name="Orange Yellow"><color xyz="0.547066, 0.478910, 0.073399"/></grid>
+  <grid index="12" name="Blue"><color xyz="0.073337, 0.053161, 0.262256"/></grid>
+  <grid index="13" name="Green"><color xyz="0.148983, 0.232286, 0.114815"/></grid>
+  <grid index="14" name="Red"><color xyz="0.199964, 0.114730, 0.041786"/></grid>
+  <grid index="15" name="Yellow"><color xyz="0.667596, 0.747742, 0.116257"/></grid>
+  <grid index="16" name="Magenta"><color xyz="0.307740, 0.195018, 0.353943"/></grid>
+  <grid index="17" name="Cyan"><color xyz="0.171913, 0.223610, 0.424317"/></grid>
+  <grid index="18" name="White"><color xyz="0.925231, 0.973445, 1.059916"/></grid>
+  <grid index="19" name="Neutral(8)"><color xyz="0.752105, 0.791298, 0.861589"/></grid>
+  <grid index="20" name="Neutral(6.5)"><color xyz="0.548973, 0.577580, 0.628887"/></grid>
+  <grid index="21" name="Neutral(5)"><color xyz="0.260318, 0.274376, 0.295105"/></grid>
+  <grid index="22" name="Neutral(3.5)"><color xyz="0.121126, 0.127438, 0.138758"/></grid>
+  <grid index="23" name="Black"><color xyz="0.030316, 0.031896, 0.034729"/></grid>
+</colorchart>
